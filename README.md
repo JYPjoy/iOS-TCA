@@ -32,3 +32,6 @@ To build a feature using the Composable Architecture you define some types and v
 # MVVM과의 차이
 - MVVM은 따로 관리
 - 리덕스 관련 패턴은 스토어에서 종합적으로 관리. 액션을 주면 상태를 받는 식
+
+# 참고 자료
+- https://github.com/JYPjoy/swift-composable-architecture
