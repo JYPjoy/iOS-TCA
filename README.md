@@ -1,12 +1,8 @@
-# The Composable Architecture
-
 # TCA 란?
 - The Composable Architecture의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단반향 아키텍처입니다.
 - 상태 관리 방식으로, 비슷한 방식에는 Redux, reswift, reactorkit가 있다. 
 
-
 # 기본 구성
-
 To build a feature using the Composable Architecture you define some types and values that model your domain:
 
 ### State
@@ -33,12 +29,8 @@ To build a feature using the Composable Architecture you define some types and v
 - MVVM은 따로 관리
 - 리덕스 관련 패턴은 스토어에서 종합적으로 관리. 액션을 주면 상태를 받는 식
 
-# 참고 자료
-- https://github.com/JYPjoy/swift-composable-architecture
-- https://0urtrees.tistory.com/359
-- 레츠스위프트22: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
-
-
+----
+<br/><br/><br/>
 
 # 레트스위프트22 목차
 - Demo
@@ -71,4 +63,7 @@ To build a feature using the Composable Architecture you define some types and v
 
 
 # 참고 자료
+- https://github.com/JYPjoy/swift-composable-architecture
+- https://0urtrees.tistory.com/359
+- 레츠스위프트22 발표 자료: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
 - 레츠스위프트22 발표 자료: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
