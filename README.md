@@ -1,6 +1,8 @@
 # TCA 란?
-- The Composable Architecture의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단반향 아키텍처입니다.
-- 상태 관리 방식으로, 비슷한 방식에는 Redux, reswift, reactorkit가 있다. 
+<img src = "./picture/ArchitectureDiagram.png"  width = "700" height = "400">
+
+- PointFree에 의해 소개된 방식으로 **The Composable Architecture**의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단반향 아키텍처입니다.
+- 상태 관리 방식으로, 비슷한 방식에는 Redux, reswift, reactorkit, elm, MVI가 있다. 
 
 # 기본 구성
 To build a feature using the Composable Architecture you define some types and values that model your domain:
@@ -25,6 +27,19 @@ To build a feature using the Composable Architecture you define some types and v
 - The runtime that actually drives your feature. You send all user actions to the store so that the store can run the reducer and effects, and you can observe state changes in the store so that you can update UI.
 - 상태, 액션을 가지고 있음. 커맨드 센터
 
+# Declarative UI and SwiftUI
+<img src = "./picture/DeclarativeUI.png"  width = "700" height = "400">
+<br/>
+<img src = "./picture/DataFlow.png"  width = "700" height = "400">
+
+
+# Why should I use TCA?
+- Better State Management
+- Easy to debug
+- Enhance Testability
+- Modularization(Composability)
+
+
 # MVVM과의 차이
 - MVVM은 따로 관리
 - 리덕스 관련 패턴은 스토어에서 종합적으로 관리. 액션을 주면 상태를 받는 식
@@ -40,25 +55,6 @@ To build a feature using the Composable Architecture you define some types and v
 - Effect and Dependency
 - Workshop2: Github API 연동
 - Workshop3: 실시간 검색 구현
-
-# Declarative UI and SwiftUI
-<img src = "./picture/DeclarativeUI.png"  width = "700" height = "400">
-<br/>
-<img src = "./picture/DataFlow.png"  width = "700" height = "400">
-
-# TCA
-### What is TCA?
-<img src = "./picture/ArchitectureDiagram.png"  width = "700" height = "400">
-
-- The Composable Architecture introduced by PointFree
-- Unidirectional data flow architecture : ex) elm, Redux, MVI, ReactorKit 단방향
-
-
-### Why should I use TCA?
-- Better State Management
-- Easy to debug
-- Enhance Testability
-- Modularization(Composability)
 
 
 
