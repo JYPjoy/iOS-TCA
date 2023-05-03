@@ -35,3 +35,5 @@ To build a feature using the Composable Architecture you define some types and v
 
 # 참고 자료
 - https://github.com/JYPjoy/swift-composable-architecture
+- https://0urtrees.tistory.com/359
+- 레츠스위프트22: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
