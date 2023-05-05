@@ -12,6 +12,8 @@
 		A85EEE872A04D6C200D0AC78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85EEE862A04D6C200D0AC78 /* Assets.xcassets */; };
 		A85EEE8A2A04D6C200D0AC78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85EEE892A04D6C200D0AC78 /* Preview Assets.xcassets */; };
 		A85EEE922A04D93D00D0AC78 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A85EEE912A04D93D00D0AC78 /* ComposableArchitecture */; };
+		A85EEE942A04EACE00D0AC78 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EEE932A04EACE00D0AC78 /* Memo.swift */; };
+		A85EEE962A04EBC700D0AC78 /* MemoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85EEE952A04EBC700D0AC78 /* MemoClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		A85EEE842A04D6C200D0AC78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A85EEE862A04D6C200D0AC78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A85EEE892A04D6C200D0AC78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A85EEE932A04EACE00D0AC78 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		A85EEE952A04EBC700D0AC78 /* MemoClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				A85EEE842A04D6C200D0AC78 /* ContentView.swift */,
 				A85EEE862A04D6C200D0AC78 /* Assets.xcassets */,
 				A85EEE882A04D6C200D0AC78 /* Preview Content */,
+				A85EEE932A04EACE00D0AC78 /* Memo.swift */,
+				A85EEE952A04EBC700D0AC78 /* MemoClient.swift */,
 			);
 			path = TCA_Simple_tutorial;
 			sourceTree = "<group>";
@@ -145,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A85EEE962A04EBC700D0AC78 /* MemoClient.swift in Sources */,
+				A85EEE942A04EACE00D0AC78 /* Memo.swift in Sources */,
 				A85EEE852A04D6C200D0AC78 /* ContentView.swift in Sources */,
 				A85EEE832A04D6C200D0AC78 /* TCA_Simple_tutorialApp.swift in Sources */,
 			);
