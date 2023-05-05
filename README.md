@@ -2,10 +2,10 @@
 <img src = "./picture/ArchitectureDiagram.png"  width = "700" height = "400">
 
 - PointFree에 의해 소개된 방식으로 **The Composable Architecture**의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단반향 아키텍처입니다.
-- 상태 관리 방식으로, 비슷한 방식에는 Redux, reswift, reactorkit, elm, MVI가 있다. 
+- 비슷한 방식에는 Redux, reswift, reactorkit, elm, MVI가 있다. 
 
 # 기본 구성
-To build a feature using the Composable Architecture you define some types and values that model your domain:
+To build a feature using the Composable Architecture you define some types and values that model your domain:\
 
 ### State
 - A type that describes the data your feature needs to perform its logic and render its UI.
