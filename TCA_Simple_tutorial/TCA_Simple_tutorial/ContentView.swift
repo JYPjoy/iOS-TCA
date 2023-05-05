@@ -8,11 +8,13 @@
 import SwiftUI
 import ComposableArchitecture
 
-// 도메인 + 상태
+//MARK: State
+/// 도메인 + 상태
 struct CounterState: Equatable{
     var count = 0
 }
 
+//MARK: Action
 // 도메인 + 액션
 enum CounterAction: Equatable{
     case addCount // 카운트를 더하는 액션
@@ -21,6 +23,8 @@ enum CounterAction: Equatable{
 
 struct CounterEnvironment{}
 
+//MARK: Reducer
+// Action과 State를 연결
 let counterReducer = AnyReducer<CounterState, CounterAction, CounterEnvironment> {state, action, environment in
     switch action{
     case .addCount:
@@ -34,19 +38,22 @@ let counterReducer = AnyReducer<CounterState, CounterAction, CounterEnvironment>
 }
 
 struct CounterView: View {
+    
+    //MARK: Store
+    let store: Store<CounterState, CounterAction>
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        // View와 Store를 연결
+        WithViewStore(self.store) { viewStore in
+            VStack{
+                Text("Count:\(viewStore.state.count) ")
+                    .padding()
+                HStack{
+                    Button("더하기", action: {viewStore.send(.addCount)})
+                    Button("빼기", action: {viewStore.send(.subtractCount)})
+                }
+            }
         }
-        .padding()
     }
 }
 
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CounterView()
-//    }
-//}
