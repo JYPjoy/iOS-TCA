@@ -6,8 +6,34 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct ContentView: View {
+// 도메인 + 상태
+struct CounterState: Equatable{
+    var count = 0
+}
+
+// 도메인 + 액션
+enum CounterAction: Equatable{
+    case addCount // 카운트를 더하는 액션
+    case subtractCount // 카운트를 빼는 액션
+}
+
+struct CounterEnvironment{}
+
+let counterReducer = AnyReducer<CounterState, CounterAction, CounterEnvironment> {state, action, environment in
+    switch action{
+    case .addCount:
+        state.count += 1
+        return EffectTask.none
+        
+    case .subtractCount:
+        state.count -= 1
+        return EffectTask.none
+    }
+}
+
+struct CounterView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -19,8 +45,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CounterView()
+//    }
+//}
