@@ -34,10 +34,17 @@ To build a feature using the Composable Architecture you define some types and v
 
 
 # Why should I use TCA?
-- Better State Management
-- Easy to debug
-- Enhance Testability
-- Modularization(Composability)
+1. Better State Management
+   - Reducer.State(RepoSearch)
+   - Mutate states Only in reduce function
+2. Easy to debug
+3. Enhance Testability
+   - Handling Side Effect(Github API)
+   - Manage Dependency(RepoSearchClient)
+4. Modularization(Composability)
+   - Divide Reducers for one module
+   - Easy to compose Reducers
+   - Operators to compose reducers(combine, pullback, forEach...)
 
 
 # MVVM과의 차이
@@ -64,21 +71,8 @@ To build a feature using the Composable Architecture you define some types and v
 - Make reduce as pure function as possible 
 
 
-
-----
-
-# 레트스위프트22 목차
-- Demo
-- Declarative UI and SwiftUI
-- TCA
-- Workshop1: SwiftUI에 TCA 적용
-- Effect and Dependency
-- Workshop2: Github API 연동
-- Workshop3: 실시간 검색 구현
-
-
-
 # 참고 자료
 - https://github.com/JYPjoy/swift-composable-architecture
 - https://0urtrees.tistory.com/359
 - 레츠스위프트22 발표 자료: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
+- PointFree
