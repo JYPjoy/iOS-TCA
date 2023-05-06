@@ -44,8 +44,28 @@ To build a feature using the Composable Architecture you define some types and v
 - MVVM은 따로 관리
 - 리덕스 관련 패턴은 스토어에서 종합적으로 관리. 액션을 주면 상태를 받는 식
 
+
+# Effect and Dependency
+<img src = "./picture/Effect_Dependency.png"  width = "700" height = "400">
+
+### Dependency
+- 외부에서의 의존성을 뜻함
+- Low coupling,High Cohesion
+- Using dirrernt Dependenciews in environments
+- Make code maintainable
+
+
+### Effect
+- 리듀스에서 외부의 로직을 처리하기 위함 
+- 외부의 로직을 실행하고, 외부 로직의 실행이 끝나면 그 결과로 새로운 액션을 trigger하거나 return none으로 액션을 trigger하지 않기 위함
+- Execute side effect
+- Trigger Action
+- Push side effects to boundary
+- Make reduce as pure function as possible 
+
+
+
 ----
-<br/><br/><br/>
 
 # 레트스위프트22 목차
 - Demo
@@ -61,5 +81,4 @@ To build a feature using the Composable Architecture you define some types and v
 # 참고 자료
 - https://github.com/JYPjoy/swift-composable-architecture
 - https://0urtrees.tistory.com/359
-- 레츠스위프트22 발표 자료: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
 - 레츠스위프트22 발표 자료: https://www.slideshare.net/ssuser3d03b2/swiftui-tca-github-search
