@@ -13,6 +13,9 @@ final class RepositoryTests: XCTestCase {
             initialState: RepoSearch.State(),
             reducer: RepoSearch()
         )
+        store.dependencies.repoSearchClient.search = { _ in
+            RepositoryModel.mock
+        }
         // Act & Assert
         // 1. "Swift"를 입력했을 때, state.keyword가 "Swift"인지 테스트합니다.
         await store.send(.keywordChanged("Swift")) {newState in
@@ -20,12 +23,14 @@ final class RepositoryTests: XCTestCase {
             
         }
         // 2. 검색을 했을 때, 예상하는 검색 결과가 나오는지를 테스트합니다.
-        await store.send(.search){ newState in
-            newState.searchResults =     [
-            "Swift",
-            "SwiftyJSON",
-            "SwiftGuide",
-            "SwiftterSwift",
+        await store.send(.search)
+        
+        await store.receive(.dataLoaded(.success(RepositoryModel.mock))){ newState in
+            newState.searchResults = [
+                "Swift",
+                "SwiftyJSON",
+                "SwiftGuide",
+                "SwiftterSwift",
             ]
         }
     }
