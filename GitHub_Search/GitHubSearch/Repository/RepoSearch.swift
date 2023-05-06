@@ -8,6 +8,7 @@ struct RepoSearch: ReducerProtocol {
         // keyword와 searchResults 상태 추가하기
         var keyword = ""
         var searchResults = [String]()
+        var requestCount = 0
     }
     
     enum Action: Equatable {
@@ -18,16 +19,26 @@ struct RepoSearch: ReducerProtocol {
         case dataLoaded(TaskResult<RepositoryModel>)
     }
     
+    
     @Dependency (\.repoSearchClient) var repoSearchClient
+    @Dependency (\.continuousClock) var clock
+    
+    private enum DebounceSearchID {}
     
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> { //sideEffect들을 EffectTask로 추상화함
         // TODO: 각각의 Action이 발생했을 때 상태는 어떻게 변화해야 하는가?
         switch action {
         case let .keywordChanged(keyword):
             state.keyword = keyword
-            return .none
+            return .run { send in
+                try await self.clock.sleep(for: .seconds(1))
+                await send(.search)
+            }
+            .cancellable(id: DebounceSearchID.self, cancelInFlight: true)
+            // last task
             
         case .search:
+            state.requestCount += 1
             return EffectTask.run { [keyword = state.keyword] send in
                 let result = await TaskResult {try await repoSearchClient.search(keyword)
                 }
@@ -43,15 +54,4 @@ struct RepoSearch: ReducerProtocol {
             return .none
         }
     }
-    
-//    func sampleSearchRequest(keyword: String, send: Send<RepoSearch.Action>) async throws {
-//        guard let url = URL(string: "https://api.github.com/search/repositories?q=\(keyword)") else {
-//            await send(RepoSearch.Action.dataLoaded(.failure(APIError.invalidURL)))
-//            return
-//        }
-//        let (data, _) = try await URLSession.shared.data(from: url)
-//        let result = await TaskResult { try JSONDecoder().decode(RepositoryModel.self, from: data) }
-//
-//        await send(RepoSearch.Action.dataLoaded(result))
-//    }
 }
