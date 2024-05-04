@@ -1,7 +1,7 @@
 # TCA 란?
 <img src = "./picture/ArchitectureDiagram.png"  width = "700" height = "400">
 
-- PointFree에 의해 소개된 방식으로 **The Composable Architecture**의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단반향 아키텍처입니다.
+- PointFree에 의해 소개된 방식으로 **The Composable Architecture**의 약어로, Store의 State 변화에 따라 View를 업데이트 해 주는 상태 기반의 단방향 아키텍처입니다.
 - 비슷한 방식에는 Redux, reswift, reactorkit, elm, MVI가 있다. 
 
 # 기본 구성
